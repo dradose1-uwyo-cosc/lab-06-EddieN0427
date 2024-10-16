@@ -3,10 +3,11 @@
 # 10/15/24
 # Lab 06
 # Lab Section: 11
-# Sources, people worked with, help given to: 
+# Sources, people worked with, help given to: Jacob Cook
 # your
 # comments
-# here
+# here - In line 75 I used, "Chat-GPT-4o mini" (10/15/24), to help me with my for-loop in order to come up with a print statement, and how to express my value when printing the dictionary for the letters and their correspondening occurrences.
+# I also used "Chat-GPT-4o mini" (10/15/24), to help me in figuring out how I could find the percentage of each; by taking the count of the characters in the string, multiplying that by 100, assigning value to the tot_length of the string, and dividing (count*100) by tot_length
 
 
 random_string = """
@@ -72,7 +73,6 @@ for char in random_string:
     else:
         char_count[char] = 1
 sorted_chars = sorted(char_count.keys())
-print("Character occurrences:")
 for char in sorted_chars:
     print(f"{char}: {char_count[char]}")
 most_occurred_char = sorted_chars[0]
@@ -87,17 +87,17 @@ for char in sorted_chars:
     if count < least_occurred_count:
         least_occurred_char = char
         least_occurred_count = count
-total_characters = len(random_string)
-print("*" * 75)
-print(f"The letter that occurred the most is '{most_occurred_char}' with {most_occurred_count} occurrences.")
-print("*" * 75)
-print(f"The letter that occurred the least is '{least_occurred_char}' with {least_occurred_count} occurrences.")
-print("*" * 75)
 
-print("Percentage of each character:")
+print("*" * 75)
+print(f"The letter that occurred the most is '{most_occurred_char}'")
+print("*" * 75)
+print(f"The letter that occurred the least is '{least_occurred_char}'")
+
+print("Character Percentage:")
+tot_characters = len(random_string)
 for char in sorted_chars:
     count = char_count[char]
-    percentage = (count*100) // total_characters
+    percentage = (count*100) // tot_characters
     print(f"{char}: {percentage}%")
 
 
